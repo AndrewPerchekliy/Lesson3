@@ -23,11 +23,14 @@ public class Car {
     }
 
     public Car(String maxSpeed, String brandName, String color, String vinNumber) {
-        this.maxSpeed = maxSpeed;
+        this.maxSpeed = Integer.parseInt(maxSpeed);
         this.brandName = brandName;
         this.color = color;
         this.vinNumber = vinNumber;
         this.oilNumber = oilNumber;
 
     }
+
 }
+
+
