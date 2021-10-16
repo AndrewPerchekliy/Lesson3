@@ -14,7 +14,7 @@ public class Car {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return Objects.equals(vinNumber, car.vinNumber);
+        return vinNumber.equals( car.vinNumber);
     }
 
     @Override
@@ -22,7 +22,7 @@ public class Car {
         return Objects.hash(vinNumber);
     }
 
-    public Car(int maxSpeed, String brandName, String color, String vinNumber, double oilNumber) {
+    public Car(int maxSpeed, String brandName, String color, String vinNumber) {
         this.maxSpeed = maxSpeed;
         this.brandName = brandName;
         this.color = color;
