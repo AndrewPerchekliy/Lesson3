@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -11,30 +12,32 @@ public class Main {
         fillCarArray(scanner,cars);
     }
     private static String fillCarArray(Scanner scanner , Car [] cars ){
-        for (int i = cars.length; i < cars.length; i++) {
+        while (true) {
+            String maxSpeed, brandName, color, vinNumber;
+
             System.out.println();
-            String carName = scanner.nextLine();
-             int maxSpeed;
-             String brandName;
-             String color;
-             String vinNumber;
-             double oilNumber;
-             String brand;
 
             System.out.println("please fill max speed\n");
-            maxSpeed= Integer.parseInt(scanner.nextLine());
+            maxSpeed= scanner.nextLine();
+           maxSpeed = cheackMaxSpeed(maxSpeed,scanner);
 
             System.out.println("please fill ");
             brandName = scanner.nextLine();
-            brandName = checkAuto(scanner.nextLine(),scanner);
-            System.out.println("please fill ");
+           brandName = checkAuto(brandName,scanner);
+            System.out.println("please fill \n");
             color = scanner.nextLine();
-            System.out.println("please fill ");
+            System.out.println("please fill \n");
             vinNumber = scanner.nextLine();
 
             cars[i] = new Car(maxSpeed , brandName , color , vinNumber);
 
         }
+
+    private static Car []doubleArraySize(Car[]cars){
+            Car[] cars1 = Arrays.copyOf(cars, cars.length * 2);
+
+        }}
+
         private static  void checkAuto(final String brand, final Scanner scanner){
             String carBrand = brand;
             if (carBrand.toLowerCase(Locale.ROOT).contains("Lada")){
@@ -62,4 +65,3 @@ public class Main {
         return carSpeed;
     }
   }
-}

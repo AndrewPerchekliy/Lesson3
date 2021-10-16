@@ -22,7 +22,7 @@ public class Car {
         return Objects.hash(vinNumber);
     }
 
-    public Car(int maxSpeed, String brandName, String color, String vinNumber) {
+    public Car(String maxSpeed, String brandName, String color, String vinNumber) {
         this.maxSpeed = maxSpeed;
         this.brandName = brandName;
         this.color = color;
